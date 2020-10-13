@@ -23,3 +23,25 @@ big clusters.
 
 For installation instructions, examples and documentation visit [Vosk
 Website](https://alphacephei.com/vosk).
+
+# Setup
+
+Docker (Vosk Websocket/GRPC Server)
+- ```docker run -d -p 2700:2700 alphacep/kaldi-en```
+
+Vosk Server
+- Clone https://github.com/alphacep/vosk-server
+- ```cd vosk-server && pip install -r requirements.txt```
+- ```cd websocket```
+- To transcribe a .wav
+    - Start Docker Container
+    - ```python3 ./test.py test.wav```
+- To transcribe via ffmpeg
+    - Start Docker Container
+    - ```python3 ./test_ffmpeg.py test.mp4```
+
+Vosk Api
+- Clone https://github.com/ShantanuNair/vosk-api
+- ```cd python/example```
+- To transcribe via ffmpeg to simple transcription
+    - ```python3 test_ffmpeg_to_text.py test.mp4```
